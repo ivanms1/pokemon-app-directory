@@ -1,0 +1,27 @@
+.Container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 0 0.5rem;
+
+  & .PokemonList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    max-width: 1200px;
+
+    & .PokemonCard {
+      & .PokemonImage {
+        object-fit: scale-down;
+      }
+
+      & .PokemonName {
+        text-align: center;
+        text-transform: capitalize;
+      }
+    }
+  }
+}

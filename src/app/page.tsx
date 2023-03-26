@@ -3,6 +3,8 @@ import Link from "next/link";
 
 import { getPokemons } from "@/services/pokemon";
 
+import styles from "./Home.module.scss";
+
 const SPRITE_URL =
   "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon";
 
@@ -11,17 +13,22 @@ export default async function Page() {
   const results = await getPokemons();
 
   return (
-    <div>
-      <div>
+    <div className={styles.Container}>
+      <div className={styles.PokemonList}>
         {results.results?.map((pokemon, index) => (
-          <Link href={`/pokemon/${pokemon.name}`} key={pokemon.name}>
+          <Link
+            href={`/pokemon/${pokemon.name}`}
+            key={pokemon.name}
+            className={styles.PokemonCard}
+          >
             <Image
               alt={pokemon.name}
+              className={styles.PokemonImage}
               width={100}
               height={100}
               src={`${SPRITE_URL}/${index + 1}.png`}
             />
-            <p>{pokemon.name}</p>
+            <p className={styles.PokemonName}>{pokemon.name}</p>
           </Link>
         ))}
       </div>

@@ -1,0 +1,61 @@
+.BaseStats {
+  font-size: 1rem;
+
+  & .Stats {
+    margin-left: 1rem;
+
+    & .Stat {
+      align-items: center;
+      display: flex;
+
+      & .StatInfo {
+        display: flex;
+        font-size: 0.9rem;
+        justify-content: space-between;
+        width: 120px;
+
+        & .StatNumber {
+          align-self: flex-end;
+          font-weight: bold;
+          margin-right: 0.3rem;
+        }
+      }
+
+      & .StatBar {
+        border-radius: 2px;
+        box-shadow:
+          inset 1px 4px 0 rgb(255 255 255 / 40%),
+          inset -1px -1px 0 rgb(0 0 0 / 30%);
+        height: 12px;
+
+        &.red {
+          background: hsl(21deg 85% 45%);
+          border-color: hsl(21deg 75% 35%);
+        }
+
+        &.yellow {
+          background: hsl(60deg 85% 45%);
+          border-color: hsl(60deg 75% 35%);
+        }
+
+        &.green {
+          background: hsl(127deg 85% 45%);
+          border-color: hsl(127deg 75% 35%);
+        }
+      }
+    }
+  }
+
+  & .Total {
+    display: flex;
+    font-size: 0.9rem;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+    width: 120px;
+
+    & .TotalNumber {
+      font-weight: bold;
+      margin-right: 0.3rem;
+    }
+  }
+}
